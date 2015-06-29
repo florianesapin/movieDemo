@@ -9,8 +9,7 @@
  */
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.listFilm = [
-    ];
+    $scope.listFilm = getFilm();
     for(var i =0; i< 0; i++){
 		$scope.listFilm.push('Element ' + (i + 1));
     }
@@ -19,11 +18,28 @@ angular.module('movieDemoApp')
 	$scope.monClick = function(){
 		$scope.listFilm.push($scope.nouveauFilm);
 		$scope.nouveauFilm = '';
+		setFilm();
 	}
 
 	$scope.remove = function(el){
   		var index = $scope.listFilm.indexOf(el);
-  		$scope.listFilm.splice(index, 1); 
+  		$scope.listFilm.splice(index, 1);
+
 	};
+	function setFilm(){
+		localStorage.setItem("liste", JSON.stringify($scope.listFilm));
+	};
+	function getFilm(){
+		var liste = localStorage.getItem("liste");
+		if(liste == null){
+			liste = [];
+		}else{
+			liste = JSON.parse(liste);
+		}
+		return liste;
+	}
   });
 
+/**var monObj = {nom: "Floriane" , test: 22, l:[1,2,3]};
+var monJSON = JSON.stringify(monObj);
+var MOnNewObj = JSON.parse(monJSON);*/
