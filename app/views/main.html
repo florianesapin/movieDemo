@@ -1,27 +1,25 @@
-<div class="jumbotron">
+<!--<div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Always a pleasure scaffolding your apps.
   </p>
   <p><a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+</div>-->
 
+<label> Nouveau film </label>
 <input type="text" ng-model="nouveauFilm" />
-<p> {{nouveauFilm}}</p>
-<p ng-bing="nouveauFilm"></p>
-<p> Hello <span ng-bind="nouveauFilm"></span></p>
+<a class="btn btn-lg btn-success" ng-href="#/" ng-click="monClick()">Ajouter un film<span class="glyphicon glyphicon-ok"></a>
+<button class="btn btn-primary" ng-click="nbrAffiche=nbrAffiche+5">+ 5</button>
+<!--<p> {{nouveauFilm}}</p>-->
+<!--<p> Hello <span ng-bind="nouveauFilm"></span></p>-->
 
-<div>
-	{{awesomeThings | uppercase}}
-</div>
+<!--<input type="checkbox" ng-model="active">-->
+<!--<input Type="number" ng-model="nbrAffiche">-->
 
-<input type="checkbox" ng-model="active">
-<input Type="number" ng-model="nbrAffiche">
-<button class="btn btn-primary" ng-click="nbrAffiche=nbrAffiche+10">+ 10</button>
 <div ng-show="active">
 	<ul>
-		<li ng-repeat ="el in awesomeThings | limitTo:nbrAffiche track by $index"> {{el | uppercase}}</li>
+		<li ng-repeat ="el in awesomeThings | limitTo:nbrAffiche track by $index"> {{el | uppercase}} <a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a></li>
 	</ul>
 </div>
 
