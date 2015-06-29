@@ -24,6 +24,7 @@ angular.module('movieDemoApp')
 	$scope.remove = function(el){
   		var index = $scope.listFilm.indexOf(el);
   		$scope.listFilm.splice(index, 1);
+  		setFilm();
 
 	};
 	function setFilm(){
