@@ -9,21 +9,21 @@
  */
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
+    $scope.listFilm = [
     ];
     for(var i =0; i< 0; i++){
-		$scope.awesomeThings.push('Element ' + (i + 1));
+		$scope.listFilm.push('Element ' + (i + 1));
     }
 	$scope.nbrAffiche = 5;
 	$scope.active = true;
 	$scope.monClick = function(){
-		$scope.awesomeThings.push($scope.nouveauFilm);
+		$scope.listFilm.push($scope.nouveauFilm);
 		$scope.nouveauFilm = '';
 	}
 
 	$scope.remove = function(el){
-  		var index = $scope.awesomeThings.indexOf(el);
-  		$scope.awesomeThings.splice(index, 1); 
+  		var index = $scope.listFilm.indexOf(el);
+  		$scope.listFilm.splice(index, 1); 
 	};
   });
 
