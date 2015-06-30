@@ -2,5 +2,6 @@
     <p>This is the Movie view.</p>
     <h1> {{movie.title}}</h1>
     <h2>{{movie.overview}}</h2>
+    <li ng-repeat ="el in movie.similar.results track by $index">{{el.title}}</li>
 
 </div>

@@ -8,11 +8,14 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MovieCtrl', function ($scope, $routeParams, MoviesDB) {
-    $scope.listMovies = [];
-    $scope.id = $routeParams.id;
-    $scope.listMovies = MoviesDB.getMovies();
-    $scope.movie = $scope.listMovies[$scope.id];
-    
+  .controller('MovieCtrl', function ($http, $scope, $routeParams, MoviesDB) {
+
+
+    $http.get('http://amc.ig.he-arc.ch:3003/movie/' + $routeParams.id + '?append_to_response=similar,release,credits&language=fr').success(function(data){
+    	$scope.movie = data;
+    });
+   
+
+ 
 
   });
