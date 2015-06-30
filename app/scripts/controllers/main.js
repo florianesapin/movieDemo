@@ -10,13 +10,19 @@
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope) {
     $scope.listFilm = getFilm();
-    for(var i =0; i< 0; i++){
+
+
+    /**for(var i =0; i< 0; i++){
 		$scope.listFilm.push('Element ' + (i + 1));
-    }
+    }*/
+
 	$scope.nbrAffiche = 5;
 	$scope.active = true;
 	$scope.monClick = function(){
-		$scope.listFilm.push($scope.nouveauFilm);
+		var titre = $scope.nouveauFilm;
+		var comm = $scope.commFilm;
+		var objFilm = {titre: titre, comment: comm};
+		$scope.listFilm.push(objFilm);
 		$scope.nouveauFilm = '';
 		setFilm();
 	}
