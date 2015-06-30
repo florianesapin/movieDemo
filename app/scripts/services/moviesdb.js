@@ -15,16 +15,18 @@ angular.module('movieDemoApp')
 
 
     var meaningOfLife = 42;
+   
     var listMovies = localStorage.getItem("list");
 	if(!listMovies){
 		listMovies = [];
 	}else{
 		listMovies = JSON.parse(listMovies);
 	}
+	
 
-	/**$http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr').success(function(data){
+	$http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr').success(function(data){
     	listMovies = data.results;
-    });*/
+    });
 
 
     // Public API here

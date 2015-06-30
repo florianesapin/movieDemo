@@ -10,7 +10,7 @@
 angular.module('movieDemoApp')
   .controller('MainCtrl', function ($scope, MoviesDB) {
     $scope.listMovies = MoviesDB.getMovies();
-
+    $scope.MoviesDB = MoviesDB;
 	$scope.nbrAffiche = 5;
 	$scope.active = true;
 	$scope.monClick = function(){
