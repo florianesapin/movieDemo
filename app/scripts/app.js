@@ -26,6 +26,10 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/movie/:id', {
+        templateUrl: 'views/movie.html',
+        controller: 'MovieCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

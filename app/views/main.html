@@ -12,7 +12,7 @@
 		<label> Titre film </label>
 	</div>
 	<div class="col-sm-8">
-		<input type="text" ng-model="nouveauFilm" /><br></br>
+		<input type="text" ng-model="newMovie" /><br></br>
 	</div>
 </div>
 
@@ -21,7 +21,7 @@
 		<label> Commentaire pour ce film </label>
 	</div>
 	<div class="col-sm-8">
-		<input type="text" ng-model="commFilm" />
+		<input type="text" ng-model="commMovie" />
 	</div>
 </div>
 
@@ -43,7 +43,7 @@
 
 <div ng-show="active">
 	<ul>
-		<li ng-repeat ="el in listFilm | limitTo:nbrAffiche track by $index"> {{el.titre | uppercase}} {{el.comment}}<a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a></li>
+		<li ng-repeat ="el in listMovies | limitTo:nbrAffiche track by $index"> <a ng-href="#/movie/{{$index}}">{{el.title | uppercase}} {{el.comment}}</a><a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a></li>
 	</ul>
 </div>
 
