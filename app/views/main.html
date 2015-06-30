@@ -43,7 +43,8 @@
 
 <div ng-show="active">
 	<ul>
-		<li ng-repeat ="el in MoviesDB.getMovies() | limitTo:nbrAffiche track by $index"> <a ng-href="#/movie/{{$index}}">{{el.title | uppercase}} {{el.comment}}</a><a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a></li>
+		<li ng-repeat ="el in MoviesDB.getMovies() | limitTo:nbrAffiche track by $index"> <a ng-href="#/movie/{{$index}}">{{el.title | uppercase}} {{el.comment}}</a><a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a><img ng-src="{{el.poster_path | urlPoster}}" alt="Description" /></li>
+		
 	</ul>
 </div>
 

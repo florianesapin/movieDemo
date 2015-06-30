@@ -15,6 +15,7 @@ angular.module('movieDemoApp')
 
 
     var meaningOfLife = 42;
+    var imgURL = 'http://image.tmdb.org/t/p/';
    
     var listMovies = localStorage.getItem("list");
 	if(!listMovies){
@@ -22,7 +23,7 @@ angular.module('movieDemoApp')
 	}else{
 		listMovies = JSON.parse(listMovies);
 	}
-	
+
 
 	$http.get('http://amc.ig.he-arc.ch:3003/movie/upcoming?language=fr').success(function(data){
     	listMovies = data.results;
@@ -33,6 +34,8 @@ angular.module('movieDemoApp')
     return {
       someMethod: function () {
         return meaningOfLife;
+      }, img: function(){
+      	return imgURL;
       },
       getMovies: function(){
         return listMovies;
