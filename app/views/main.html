@@ -33,7 +33,7 @@
 		<button class="btn btn-primary" ng-click="nbrAffiche=nbrAffiche+5">+ 5</button>
 	</div>
 	<div class="col-sm-4">
-		<input type="text" />
+		<input type="text" ng-model="search" ng-change="research()"/>
 	</div>
 </div>
 
@@ -44,10 +44,11 @@
 <!--<input type="checkbox" ng-model="active">-->
 <!--<input Type="number" ng-model="nbrAffiche">-->
 
+
+
 <div ng-show="active">
-	<ul>
-		<li ng-repeat ="el in MoviesDB.getMovies() | limitTo:nbrAffiche track by $index"> <a ng-href="#/movie/{{el.id}}">{{el.title | uppercase}} {{el.comment}}</a><a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a><img ng-src="{{el.poster_path | urlPoster}}" alt="Description" /></li>
-		
-	</ul>
+	<slick dots="ture" infinite=true slides-to-show=3 slides-to-scroll=3 init-onload="true" responsive="breakpoint" data="MoviesDB.getMovies()">
+		<div ng-repeat ="el in MoviesDB.getMovies() | limitTo:nbrAffiche track by $index"> <a ng-href="#/movie/{{el.id}}">{{el.title | uppercase}} {{el.comment}}</a><a ng-click="remove(el)"> <span class="glyphicon glyphicon-remove"> </a><img ng-src="{{el.poster_path | urlPoster}}" alt="Description" /></div>
+	</slick>
 </div>
 

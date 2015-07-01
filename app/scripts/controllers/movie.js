@@ -8,14 +8,16 @@
  * Controller of the movieDemoApp
  */
 angular.module('movieDemoApp')
-  .controller('MovieCtrl', function ($http, $scope, $routeParams, MoviesDB) {
+  .controller('MovieCtrl', function ($http, $scope, $routeParams, MoviesDB, $rootScope) {
+
+  /**$rootScope.MoviesDB = MoviesDB;*/
 
 
-    $http.get('http://amc.ig.he-arc.ch:3003/movie/' + $routeParams.id + '?append_to_response=similar,release,credits&language=fr').success(function(data){
+    $http.get('http://amc.ig.he-arc.ch:3003/movie/' + $routeParams.id + '?append_to_response=similar,releases,credits&language=fr').success(function(data){
     	$scope.movie = data;
     });
    
-
+    /**$rootScope.bgImage = $scope.movie.backdrop_path;*/
  
 
   });

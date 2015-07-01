@@ -30,6 +30,8 @@ angular.module('movieDemoApp')
     });
 
 
+
+
     // Public API here
     return {
       someMethod: function () {

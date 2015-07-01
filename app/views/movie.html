@@ -2,6 +2,8 @@
     <p>This is the Movie view.</p>
     <h1> {{movie.title}}</h1>
     <h2>{{movie.overview}}</h2>
+    <p> Fil disponible dans les pays suivants:</p>
+    <flag ng-repeat ="x in movie.releases.countries track by $index" country={{x.iso_3166_1}} size="16"><p>{{x.release_date}}</p></flag>
+    <p>{{x.release_date}}</p>
     <li ng-repeat ="el in movie.similar.results track by $index">{{el.title}}</li>
-
 </div>
